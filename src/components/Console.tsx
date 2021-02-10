@@ -1,12 +1,19 @@
 import React from "react";
 
-const Console: React.FC = () => {
+type Props = {
+  input: string,
+}
+
+const Console: React.FC<Props> = ({ input }) => {
+  
   return (
-    <div>
-      <p>Console</p>
-      <img src="https://via.placeholder.com/500x300" alt="placeholder" />
+    <div className="console"> 
+      <div>
+        {input ? (<p>Working</p>) : (<p>Console</p>)}
+      </div>
     </div>
   );
 };
 
 export default Console;
+
