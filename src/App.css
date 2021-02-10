@@ -6,22 +6,22 @@
   font-family: "Roboto Mono", monospace;
   justify-content: center;
 }
-#description{
-  width:95%;
+#description {
+  width: 95%;
   text-align: left;
 }
-#bottomHalf{
+#bottomHalf {
   margin-top: 2%;
   display: flex;
   width: 100%;
   justify-content: space-evenly;
 }
-.inputBox{
-  width:385px;
+.inputBox {
+  width: 385px;
   height: 25px;
   border-radius: 5px;
 }
-.goButton{
+.goButton {
   width: 100px;
   height: 30px;
   background-color: purple;
@@ -29,6 +29,9 @@
   margin-left: 5px;
   border-radius: 5px;
 }
-.console{
-  margin-top:8px;
+.console {
+  margin-top: 8px;
+}
+.displays {
+  display: flex;
 }

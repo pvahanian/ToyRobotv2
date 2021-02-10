@@ -1,19 +1,24 @@
 import React from "react";
 
-type Props = {
-  input: string,
-}
+/**
+ * Function: Console
+ * Goal:    To take input array of strings and display under the input field
+ * Return:  Jsx div of the submitted commands
+ */
 
-const Console: React.FC<Props> = ({ input }) => {
-  
+type Props = {
+  inputArrayOfStrings: string[];
+};
+
+const Console: React.FC<Props> = ({ inputArrayOfStrings }) => {
+  console.log(inputArrayOfStrings);
   return (
-    <div className="console"> 
+    <div className="console">
       <div>
-        {input ? (<p>Working</p>) : (<p>Console</p>)}
+        {inputArrayOfStrings.length > 0 ? <p>Working</p> : <p>Console</p>}
       </div>
     </div>
   );
 };
 
 export default Console;
-
