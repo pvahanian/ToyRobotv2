@@ -8,7 +8,7 @@ import Board from "./components/Board.tsx";
 function App() {
   return (
     <div className="App">
-      <p>Will is the best</p>
+      <p>WILL IS THE BEST!</p>
       <InputForm />
       <Console />
       <Board />
