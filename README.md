@@ -52,6 +52,6 @@ Your browser will open and you can start entering commands! </br>
 First command must be: PLACE X,Y,F (example: PLACE,0,0,NORTH)</br>
 
 # Team:
-https://github.com/willwearing
-https://github.com/pvahanian
+https://github.com/willwearing</br>
+https://github.com/pvahanian</br>
 
