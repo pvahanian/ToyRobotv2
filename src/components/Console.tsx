@@ -11,11 +11,10 @@ type Props = {
 };
 
 const Console: React.FC<Props> = ({ inputArrayOfStrings }) => {
-  console.log(inputArrayOfStrings);
   return (
     <div className="console">
       <div>
-        {inputArrayOfStrings.length > 0 ? <p>Working</p> : <p>Console</p>}
+        {inputArrayOfStrings.length > 0 ? <p>{inputArrayOfStrings[0]} {inputArrayOfStrings[1]} {inputArrayOfStrings[2]} {inputArrayOfStrings[3]}</p> : <p>Console</p>}
       </div>
     </div>
   );

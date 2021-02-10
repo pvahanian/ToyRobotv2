@@ -35,3 +35,6 @@
 .displays {
   display: flex;
 }
+.displaySpacer{
+  width: 50vw;
+}
