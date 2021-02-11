@@ -1,7 +1,7 @@
 # Toy Robot Simulator</br>
 
 # Why take 2?</br>
-Take 1 worked. The code? Ugly, uroganized and not DRY. We're taking a second go to see how much we can improve! </br>
+Take 1 worked. The code? Ugly, unorganized and not DRY. We're taking a second go to see how much we can improve! </br>
 Find take 1 here: https://github.com/willwearing/toy-robot</br>
 
 # Description:</br>
