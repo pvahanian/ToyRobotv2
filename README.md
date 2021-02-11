@@ -1,5 +1,9 @@
 # Toy Robot Simulator</br>
 
+# Why take 2?</br>
+Take 1 worked. The code? Ugly, uroganized and not DRY. We're taking a second go to see how much we can improve! </br>
+Find take 1 here: https://github.com/willwearing/toy-robot</br>
+
 # Description:</br>
 The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units.</br>
 There are no other obstructions on the table surface.</br>
