@@ -16,6 +16,7 @@ const Console: React.FC<Props> = ({ inputArrayOfStrings }) => {
       <div>
         {inputArrayOfStrings.length > 0 ? <p>{inputArrayOfStrings[0]} {inputArrayOfStrings[1]} {inputArrayOfStrings[2]} {inputArrayOfStrings[3]}</p> : <p>Console</p>}
       </div>
+      <img src="https://via.placeholder.com/500x513" alt="placeholder" />
     </div>
   );
 };
