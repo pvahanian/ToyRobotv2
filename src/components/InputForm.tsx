@@ -4,30 +4,14 @@ import Board from "./Board";
 
 //import utils
 import splitInputString from "../utils/splitInputString";
-import reportLocation from "../utils/reportLocation";
 import initInputChecker from "../utils/initInputChecker";
-import isValidInput from "../utils/isValidInput";
-
-//import constants
-import { validCommands } from "../constants/commands";
-import { placeCommand } from "../constants/commands";
 
 const InputForm: React.FC = () => {
   const [input, setInput] = useState("");
   const [inputArrayOfStrings, setInputArrayOfStrings] = useState([]);
-  const [coordinates, setCoordinates] = useState(["null"]);
+  const [coords, setCoords] = useState([]);
 
-  const validPath = () => {
-    // Is the robot on the board?
-    if (reportLocation(coordinates)) {
-      // if true - invoke multi path switch
-      setCoordinates(initInputChecker(inputArrayOfStrings, validCommands));
-    } else {
-      // if false - invoke PLACE only logic
-      setCoordinates(initInputChecker(inputArrayOfStrings, placeCommand));
-    }
-    setInput("");
-  };
+  let robotData = { command: null, error: null, x: "", y: "", facing: "" };
 
   /**
    * Function: handleSubmit
@@ -36,8 +20,17 @@ const InputForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    setInputArrayOfStrings(splitInputString(input));
+    let outputDisplay = initInputChecker(splitInputString(input), coords);
+
+    console.log(outputDisplay, "This is outputdisplay");
+    if (outputDisplay[0][0] !== "ERROR") {
+      setCoords(outputDisplay.slice(1, 4));
+    }
+
+    setInputArrayOfStrings(outputDisplay);
     setInput("");
+
+    outputDisplay = coords;
   };
 
   /**
@@ -65,7 +58,7 @@ const InputForm: React.FC = () => {
         </form>
         <Console inputArrayOfStrings={inputArrayOfStrings} />
       </div>
-      <Board />
+      <Board coords={coords} />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { validCommands } from "../constants/commands";
 
 export default function isValidInput(inputArray: string[]) {
-  return validCommands.includes(inputArray[0]);
+  console.log(inputArray, "gonna learn today");
+  if (inputArray !== undefined) return validCommands.includes(inputArray[0]);
 }
