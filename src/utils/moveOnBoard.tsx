@@ -53,8 +53,10 @@ function moveOnBoard(robotData:RobotData): RobotData {
         robotData.error=dropOffTableError
         return robotData;
       }
+    default:
+      robotData.error="Enter a valid input command"
+    return robotData
   }
-  return robotData
 }
 
 export default moveOnBoard;

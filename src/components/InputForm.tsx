@@ -43,7 +43,7 @@ const InputForm: React.FC = () => {
 
     // outputDisplay = coords;
   };
-
+  console.log(robotData)
   /**
    * Function: handleChange
    * Goal:    set Input state to user input

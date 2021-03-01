@@ -19,9 +19,11 @@ function turnLeft(robotData:RobotData): RobotData  {
       return robotData;;
     case "WEST":
       robotData.facing="SOUTH"
-      return robotData;;
+      return robotData;
+    default:
+      robotData.error="Enter a valid input command"
+    return robotData;
   }
-  return robotData
 }
 
 export default turnLeft;
