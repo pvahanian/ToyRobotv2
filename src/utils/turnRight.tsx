@@ -5,21 +5,25 @@
  * Params: input array of strings[X-Axis, Y-Axis, Direction]
  */
 
-function turnRight(coord: string[]): any {
-  let xAxisValue = parseInt(coord[0]);
-  let yAxisValue = parseInt(coord[1]);
-  let direction = coord[2];
+import { RobotData } from "../constants/constants";
 
-  switch (direction) {
+function turnRight(robotData:RobotData): RobotData {
+  
+  switch (robotData.facing) {
     case "NORTH":
-      return ["RIGHT", xAxisValue, yAxisValue, "EAST"];
+      robotData.facing="EAST"
+      return robotData;
     case "EAST":
-      return ["RIGHT", xAxisValue, yAxisValue, "SOUTH"];
+      robotData.facing="SOUTH"
+      return robotData;
     case "SOUTH":
-      return ["RIGHT", xAxisValue, yAxisValue, "WEST"];
+      robotData.facing="WEST"
+      return robotData;;
     case "WEST":
-      return ["RIGHT", xAxisValue, yAxisValue, "NORTH"];
+      robotData.facing="NORTH"
+      return robotData;;
   }
+  return robotData
 }
 
 export default turnRight;

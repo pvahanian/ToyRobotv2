@@ -6,12 +6,20 @@ import Board from "./Board";
 import splitInputString from "../utils/splitInputString";
 import initInputChecker from "../utils/initInputChecker";
 
+//import interface
+import {RobotData} from '../constants/constants'
+
 const InputForm: React.FC = () => {
   const [input, setInput] = useState("");
   const [inputArrayOfStrings, setInputArrayOfStrings] = useState([]);
   const [coords, setCoords] = useState([]);
-
-  let robotData = { command: null, error: null, x: "", y: "", facing: "" };
+  const [robotData, setRobotData] = useState <RobotData>({
+    command: "",
+    error: "",
+    x: null,
+    y: null,
+    facing: ""
+  });
 
   /**
    * Function: handleSubmit
@@ -20,17 +28,20 @@ const InputForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    let outputDisplay = initInputChecker(splitInputString(input), coords);
+    setRobotData(splitInputString(input));
+    setRobotData(initInputChecker(robotData))
+    console.log(robotData)
+    // let outputDisplay = initInputChecker(splitInputString(input), coords);
 
-    console.log(outputDisplay, "This is outputdisplay");
-    if (outputDisplay[0][0] !== "ERROR") {
-      setCoords(outputDisplay.slice(1, 4));
-    }
+    // console.log(outputDisplay, "This is outputdisplay");
+    // if (outputDisplay[0][0] !== "ERROR") {
+    //   setCoords(outputDisplay.slice(1, 4));
+    // }
 
-    setInputArrayOfStrings(outputDisplay);
-    setInput("");
+    // setInputArrayOfStrings(outputDisplay);
+    // setInput("");
 
-    outputDisplay = coords;
+    // outputDisplay = coords;
   };
 
   /**

@@ -5,44 +5,56 @@
  * Params: input array of strings[X-Axis, Y-Axis, Direction]
  */
 
-import { tableDimension, dropOffTableError } from "../constants/constants";
+import { tableDimension, dropOffTableError, RobotData } from "../constants/constants";
 
-function moveOnBoard(coord: string[]): any {
-  let xAxisValue = parseInt(coord[0]);
-  let yAxisValue = parseInt(coord[1]);
-  let direction = coord[2];
+function moveOnBoard(robotData:RobotData): RobotData {
+  if(robotData.x === null ||robotData.y === null){
+    robotData.error="Robot must be placed on board"
+    return robotData
+  }
 
-  const maxChecker =
-    xAxisValue <= tableDimension.x - 1 && yAxisValue <= tableDimension.y - 1;
+  // const xAxisValue = robotData.x; 
+  // const yAxisValue = robotData.y;
+  // const direction = robotData.facing;
 
-  const minChecker = xAxisValue > 0 && yAxisValue > 0;
+  const maxChecker = robotData.x <= tableDimension.x - 1 && robotData.y <= tableDimension.y - 1;
+  const minChecker = robotData.x > 0 && robotData.y > 0;
 
-  switch (direction) {
+  switch (robotData.facing) {
     case "NORTH":
       if (maxChecker) {
-        return ["MOVE", xAxisValue, yAxisValue + 1, direction];
+        robotData.y+=1
+        return robotData;
       } else {
-        return [dropOffTableError, coord];
+        robotData.error=dropOffTableError
+        return robotData;
       }
     case "EAST":
       if (maxChecker) {
-        return ["MOVE", xAxisValue + 1, yAxisValue, direction];
+        robotData.x+=1
+        return robotData;
       } else {
-        return [dropOffTableError, coord];
+        robotData.error=dropOffTableError
+        return robotData;
       }
     case "SOUTH":
       if (minChecker) {
-        return ["MOVE", xAxisValue, yAxisValue - 1, direction];
+        robotData.y-=1
+        return robotData;
       } else {
-        return [dropOffTableError, coord];
+        robotData.error=dropOffTableError
+        return robotData;
       }
     case "WEST":
       if (minChecker) {
-        return ["MOVE", xAxisValue - 1, yAxisValue, direction];
+        robotData.x-=1
+        return robotData;
       } else {
-        return [dropOffTableError, coord];
+        robotData.error=dropOffTableError
+        return robotData;
       }
   }
+  return robotData
 }
 
 export default moveOnBoard;

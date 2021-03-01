@@ -9,25 +9,28 @@ import moveOnBoard from "./moveOnBoard";
 import turnLeft from "./turnLeft";
 import turnRight from "./turnRight";
 
-function initInputChecker(input: string[], coords: string[]): any {
+import { RobotData } from "../constants/constants";
+
+function initInputChecker(robotData:RobotData): RobotData {
   //turn the array of strings into variables
-  switch (input[0]) {
+  
+  switch (robotData.command) {
     case "PLACE":
-      return placeOnBoard(input);
+      return placeOnBoard(robotData);
     case "MOVE":
-      return moveOnBoard(coords);
+      return moveOnBoard(robotData);
     case "REPORT":
-      if (coords.length === 0) {
-        return ["ERROR", "Robot not on the board - enter valid PLACE command"];
-      } else {
-        return ["RETURN", ...coords];
+      if (robotData.x === null || robotData.y === null) {
+        robotData.error="Robot not on the board - enter valid PLACE command"
       }
+      return robotData
     case "RIGHT":
-      return turnRight(coords);
+      return turnRight(robotData);
     case "LEFT":
-      return turnLeft(coords);
+      return turnLeft(robotData);
     default:
-      return ["ERROR", "Enter a valid input command"];
+      robotData.error="Enter a valid input command"
+      return robotData
   }
 }
 

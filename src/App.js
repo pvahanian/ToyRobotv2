@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import { RecoilRoot } from "recoil";
+// import { RecoilRoot } from "recoil";
 
 //import components
 import InputForm from "./components/InputForm.tsx";
 
 function App() {
   return (
-    <RecoilRoot>
+    // <RecoilRoot>
       <div className="App">
         <div id="description">
           <h2 className="title-id">Description</h2>
@@ -53,7 +53,7 @@ function App() {
           </div>
         </div>
       </div>
-    </RecoilRoot>
+    // </RecoilRoot>
   );
 }
 
