@@ -1,6 +1,8 @@
 import React, { useState, FormEvent } from "react";
+import { useRecoilState } from "recoil";
 import Console from "./Console";
 import Board from "./Board";
+import { robot } from "../store/Atom";
 
 //import utils
 import splitInputString from "../utils/splitInputString";
@@ -10,8 +12,7 @@ const InputForm: React.FC = () => {
   const [input, setInput] = useState("");
   const [inputArrayOfStrings, setInputArrayOfStrings] = useState([]);
   const [coords, setCoords] = useState([]);
-
-  let robotData = { command: null, error: null, x: "", y: "", facing: "" };
+  const [robotObj, setRobotOjb] = useRecoilState(robot);
 
   /**
    * Function: handleSubmit
@@ -41,7 +42,7 @@ const InputForm: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
   };
-
+  console.log(robotObj);
   return (
     <div className="displays">
       <div className="displaySpacer">
