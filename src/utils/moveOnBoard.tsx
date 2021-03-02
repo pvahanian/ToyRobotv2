@@ -13,10 +13,6 @@ function moveOnBoard(robotData:RobotData): RobotData {
     return robotData
   }
 
-  // const xAxisValue = robotData.x; 
-  // const yAxisValue = robotData.y;
-  // const direction = robotData.facing;
-
   const maxChecker = robotData.x <= tableDimension.x - 1 && robotData.y <= tableDimension.y - 1;
   const minChecker = robotData.x > 0 && robotData.y > 0;
 
@@ -24,39 +20,40 @@ function moveOnBoard(robotData:RobotData): RobotData {
     case "NORTH":
       if (maxChecker) {
         robotData.y+=1
-        return robotData;
+        break
       } else {
         robotData.error=dropOffTableError
-        return robotData;
+        break
       }
     case "EAST":
       if (maxChecker) {
         robotData.x+=1
-        return robotData;
+        break
       } else {
         robotData.error=dropOffTableError
-        return robotData;
+        break
       }
     case "SOUTH":
       if (minChecker) {
         robotData.y-=1
-        return robotData;
+        break
       } else {
         robotData.error=dropOffTableError
-        return robotData;
+        break
       }
     case "WEST":
       if (minChecker) {
         robotData.x-=1
-        return robotData;
+        break
       } else {
         robotData.error=dropOffTableError
-        return robotData;
+        break
       }
     default:
       robotData.error="Enter a valid input command"
-    return robotData
+      break
   }
+  return robotData
 }
 
 export default moveOnBoard;

@@ -12,21 +12,21 @@ function turnRight(robotData:RobotData): RobotData {
   switch (robotData.facing) {
     case "NORTH":
       robotData.facing="EAST"
-      return robotData;
+      break;
     case "EAST":
       robotData.facing="SOUTH"
-      return robotData;
+      break;
     case "SOUTH":
       robotData.facing="WEST"
-      return robotData;;
+      break;
     case "WEST":
       robotData.facing="NORTH"
-      return robotData;
+      break;
     default:
       robotData.error="Enter a valid input command"
-    return robotData
+      break;
   }
-
+  return robotData;
 }
 
 export default turnRight;

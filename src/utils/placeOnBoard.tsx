@@ -8,33 +8,29 @@
 import { RobotData, tableDimension } from "../constants/constants";
 
 function placeOnBoard(robotData:RobotData): RobotData {
-  let xAxisValue = robotData.x;
-  let yAxisValue = robotData.y;
-  let facing = robotData.facing;
 
-  if(xAxisValue ===null || yAxisValue === null){
-    robotData.error="X and Y coordinates need to be valid"
+  if(robotData.x ===null || robotData.y === null){
+    robotData.error="X and Y coordinates need to be Valid"
     return robotData
   }
 
   if (
-    xAxisValue >= 0 &&
-    xAxisValue <= tableDimension.x &&
-    yAxisValue <= tableDimension.y &&
-    yAxisValue >= 0
+    robotData.x >= 0 &&
+    robotData.x <= tableDimension.x &&
+    robotData.y <= tableDimension.y &&
+    robotData.y >= 0
   ) {
       if (
-        facing === "NORTH" ||
-        facing === "SOUTH" ||
-        facing === "WEST" ||
-        facing === "EAST"
+        robotData.facing === "NORTH" ||
+        robotData.facing === "SOUTH" ||
+        robotData.facing === "WEST" ||
+        robotData.facing === "EAST"
       ) {
-        return robotData;
+        return robotData;  // Valid RobotData
       }
-      robotData.error="Enter valid PLACE command - try [Command, X-Axis, Y-Axis, Direction]"
-      return robotData
   }
-  return robotData;
+  robotData.error="Enter valid PLACE command - try [Command, X-Axis, Y-Axis, Direction]"
+  return robotData
   //Check to see if x is a number y is number and facing is equal to n s e or w
   // if it is return them as an array for our setcoord state
   // else return null

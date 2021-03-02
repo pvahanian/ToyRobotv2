@@ -12,7 +12,6 @@ import turnRight from "./turnRight";
 import { RobotData } from "../constants/constants";
 
 function initInputChecker(robotData:RobotData): RobotData {
-  //turn the array of strings into variables
   
   switch (robotData.command) {
     case "PLACE":

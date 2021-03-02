@@ -67,7 +67,7 @@ const InputForm: React.FC = () => {
           />
           <button className="goButton">Go</button>
         </form>
-        <Console inputArrayOfStrings={inputArrayOfStrings} />
+        <Console robotData={robotData} />
       </div>
       <Board coords={coords} />
     </div>

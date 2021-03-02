@@ -1,4 +1,5 @@
 import React from "react";
+import { RobotData } from "../constants/constants";
 
 /**
  * Function: Console
@@ -6,25 +7,22 @@ import React from "react";
  * Return:  Jsx div of the submitted commands
  */
 
-type Props = {
-  inputArrayOfStrings: string[];
-};
-
-const Console: React.FC<Props> = ({ inputArrayOfStrings }) => {
-  if (inputArrayOfStrings[0] === "ERROR") {
+const Console: React.FC<RobotData> = ( robotData:RobotData ) => {
+  console.log(robotData)
+  if (robotData.error !== "") {
     return (
       <div className="console">
-        <p>{inputArrayOfStrings[1]}</p>
+        <p>{robotData.error}</p>
       </div>
     );
   } else {
     return (
       <div className="console">
         <div>
-          {inputArrayOfStrings.length > 0 ? (
+          {robotData.command.length > 0 ? (
             <p>
-              {inputArrayOfStrings[0]} {inputArrayOfStrings[1]}{" "}
-              {inputArrayOfStrings[2]} {inputArrayOfStrings[3]}
+              {robotData.command} {robotData.x}{" "}
+              {robotData.y} {robotData.facing}
             </p>
           ) : (
             <p>Console</p>
