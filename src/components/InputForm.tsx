@@ -7,18 +7,18 @@ import splitInputString from "../utils/splitInputString";
 import initInputChecker from "../utils/initInputChecker";
 
 //import interface
-import {RobotData} from '../constants/constants'
+import { RobotData } from "../constants/constants";
 
 const InputForm: React.FC = () => {
   const [input, setInput] = useState("");
   // const [inputArrayOfStrings, setInputArrayOfStrings] = useState([]);
-  const [coords, setCoords] = useState([]);
-  const [robotData, setRobotData] = useState <RobotData>({
+  // const [coords, setCoords] = useState([]);
+  const [robotData, setRobotData] = useState<RobotData>({
     command: "",
     error: "",
     x: null,
     y: null,
-    facing: ""
+    facing: "",
   });
 
   /**
@@ -29,8 +29,8 @@ const InputForm: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // if(robotData.x !=null && robotData.y !=null){
-    setRobotData(initInputChecker(splitInputString(input,robotData)));
-
+    setRobotData(initInputChecker(splitInputString(input, robotData)));
+    setInput("");
   };
 
   /**
@@ -65,14 +65,14 @@ const InputForm: React.FC = () => {
 
 export default InputForm;
 
-  // let outputDisplay = initInputChecker(splitInputString(input), coords);
+// let outputDisplay = initInputChecker(splitInputString(input), coords);
 
-    // console.log(outputDisplay, "This is outputdisplay");
-    // if (outputDisplay[0][0] !== "ERROR") {
-    //   setCoords(outputDisplay.slice(1, 4));
-    // }
+// console.log(outputDisplay, "This is outputdisplay");
+// if (outputDisplay[0][0] !== "ERROR") {
+//   setCoords(outputDisplay.slice(1, 4));
+// }
 
-    // setInputArrayOfStrings(outputDisplay);
-    // setInput("");
+// setInputArrayOfStrings(outputDisplay);
+// setInput("");
 
-    // outputDisplay = coords;
+// outputDisplay = coords;
