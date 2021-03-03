@@ -6,25 +6,31 @@
 
 import {RobotData} from '../constants/constants'
 
-function splitInputString(input: string): RobotData {
-  let robotData:RobotData = {
-    command: "",
-    x:null, 
-    y:null,
-    facing: ""
-  };
+function splitInputString(input: string, robotData:RobotData): RobotData {
+    let initialString: string[] = input.split(",");
+    let arrayOfStrings: string[] = initialString.map((s: string) =>
+      s.trim().toUpperCase()
+    );
 
-  let initialString: string[] = input.split(",");
-  let arrayOfStrings: string[] = initialString.map((s: string) =>
-    s.trim().toUpperCase()
-  );
-  robotData.command=arrayOfStrings[0]
+    if(robotData.command ===""){
+    robotData.command=arrayOfStrings[0]
   if(arrayOfStrings[0]==="PLACE"){
     robotData.x=Number(arrayOfStrings[1])
     robotData.y=Number(arrayOfStrings[2])
     robotData.facing=arrayOfStrings[3]
   }
   return robotData;
+  }
+  else
+  {
+    if(arrayOfStrings[0]==="PLACE"){
+      robotData.command=(arrayOfStrings[0])
+      robotData.x=Number(arrayOfStrings[1])
+      robotData.y=Number(arrayOfStrings[2])
+      robotData.facing=arrayOfStrings[3]
+    }
+    
+  }
 }
 
 export default splitInputString;

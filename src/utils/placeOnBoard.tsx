@@ -8,6 +8,7 @@
 import { RobotData, tableDimension } from "../constants/constants";
 
 function placeOnBoard(robotData:RobotData): RobotData {
+  console.log(robotData, "inside Place")
 
   if(robotData.x ===null || robotData.y === null){
     robotData.error="X and Y coordinates need to be Valid"
@@ -26,6 +27,8 @@ function placeOnBoard(robotData:RobotData): RobotData {
         robotData.facing === "WEST" ||
         robotData.facing === "EAST"
       ) {
+        console.log(robotData, "Leaving after success Place")
+
         return robotData;  // Valid RobotData
       }
   }

@@ -12,7 +12,7 @@ import turnRight from "./turnRight";
 import { RobotData } from "../constants/constants";
 
 function initInputChecker(robotData:RobotData): RobotData {
-  
+  console.log(robotData.command, "Inside Command")
   switch (robotData.command) {
     case "PLACE":
       return placeOnBoard(robotData);

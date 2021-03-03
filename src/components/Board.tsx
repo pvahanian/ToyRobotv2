@@ -1,23 +1,20 @@
 import React from "react";
-
+import { RobotData } from "../constants/constants";
 /**
  * Function: Board
  * Param: String for location and char for direction facing
  * Goal: Take input and render it to board. Re-renders on every input.
  */
 
-type Props = {
-  coords: string[];
-};
 
-const Board: React.FC<Props> = ({ coords }) => {
-  console.log(coords, "This is coords");
-  if (coords.length > 0) {
+
+const Board: React.FC<{robotData: RobotData}> = ({ robotData }) => {
+  if (robotData.x !=null && robotData.y != null) {
     return (
       <div>
-        <p>{coords[0]}</p>
-        <p>{coords[1]}</p>
-        <p>{coords[2]}</p>
+        <p>{robotData.x}</p>
+        <p>{robotData.y}</p>
+        <p>{robotData.facing}</p>
       </div>
     );
   } else {

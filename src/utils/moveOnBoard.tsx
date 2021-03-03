@@ -8,6 +8,7 @@
 import { tableDimension, dropOffTableError, RobotData } from "../constants/constants";
 
 function moveOnBoard(robotData:RobotData): RobotData {
+  console.log(robotData,"Move stuff")
   if(robotData.x === null ||robotData.y === null){
     robotData.error="Robot must be placed on board"
     return robotData
