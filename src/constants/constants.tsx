@@ -4,7 +4,7 @@ export const tableDimension = {
 };
 
 export const dropOffTableError = (
-  "ERROR, Invalid command - the robot is going to drop of the table!"
+  "ERROR, The robot is going to drop of the table!"
 );
 
 export const allowedCommands = ["PLACE", "MOVE", "LEFT", "RIGHT", "REPORT"];

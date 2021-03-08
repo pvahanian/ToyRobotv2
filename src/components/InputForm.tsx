@@ -45,6 +45,7 @@ const InputForm: React.FC = () => {
   return (
     <div className="displays">
       <div className="displaySpacer">
+      
         <form onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
