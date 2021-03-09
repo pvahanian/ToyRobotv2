@@ -17,6 +17,7 @@ function splitInputString(input: string, robotData: RobotData): RobotData {
     robotData.y = Number(arrayOfStrings[2]);
     robotData.facing = arrayOfStrings[3];
   }
+    robotData.error=""
     return robotData;
   
 }

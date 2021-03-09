@@ -11,8 +11,6 @@ import { RobotData } from "../constants/constants";
 
 const InputForm: React.FC = () => {
   const [input, setInput] = useState("");
-  // const [inputArrayOfStrings, setInputArrayOfStrings] = useState([]);
-  // const [coords, setCoords] = useState([]);
   const [robotData, setRobotData] = useState<RobotData>({
     command: "",
     error: "",
@@ -28,10 +26,10 @@ const InputForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    // if(robotData.x !=null && robotData.y !=null){
     setRobotData(initInputChecker(splitInputString(input, robotData)));
     setInput("");
   };
+
 
   /**
    * Function: handleChange
@@ -45,7 +43,6 @@ const InputForm: React.FC = () => {
   return (
     <div className="displays">
       <div className="displaySpacer">
-      
         <form onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
@@ -57,7 +54,7 @@ const InputForm: React.FC = () => {
           />
           <button className="goButton">Go</button>
         </form>
-        <Console robotData={robotData} />
+        <Console robotData={robotData}/>
       </div>
       <Board robotData={robotData} />
     </div>
@@ -65,15 +62,3 @@ const InputForm: React.FC = () => {
 };
 
 export default InputForm;
-
-// let outputDisplay = initInputChecker(splitInputString(input), coords);
-
-// console.log(outputDisplay, "This is outputdisplay");
-// if (outputDisplay[0][0] !== "ERROR") {
-//   setCoords(outputDisplay.slice(1, 4));
-// }
-
-// setInputArrayOfStrings(outputDisplay);
-// setInput("");
-
-// outputDisplay = coords;

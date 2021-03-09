@@ -1,5 +1,6 @@
 import React from "react";
 import { RobotData } from "../constants/constants";
+import { useRef } from "react";
 
 /**
  * Function: Console
@@ -7,46 +8,18 @@ import { RobotData } from "../constants/constants";
  * Return:  Jsx div of the submitted commands
  */
 
-const Console: React.FC<{robotData: RobotData}> = ({ robotData }) => {
-  let message="Console"
-  if (robotData.error) {
-    message = robotData.error.slice()
+const Console: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
+  let message = useRef(document.createElement("p"))
+  if (robotData.error && robotData.error !== "") {
+    message.current.textContent = robotData.error
   }
-  else if (robotData.command.length > 0 ){ 
-    message = robotData.command + " " + robotData.x + " " + robotData.y + " " + robotData.facing            
+  else if (robotData.command.length > 0){
+    message.current.textContent = robotData.command + " " + robotData.x + " " + robotData.y + " " + robotData.facing
   }
   return (
-      <div className="console">
-        <p>{message}</p>  
-      </div>
-    );
-  
+    <div className="console">
+      <p ref={message}> Console</p>
+    </div>
+  );
 };
 export default Console;
-
-// (
-//   <div className="console">
-//     <div>
-//     {robotData.command.length > 0 ? (
-//       <div>
-//         <p>
-//         {robotData.command} {robotData.x}{" "}
-//         {robotData.y} {robotData.facing}            
-//         </p>
-//       </div>
-//       ) : (
-//         <p>Console</p>
-//       )}
-//     </div>
-//   </div>
-// );
-// }
-// };
-
-// let errorMsg=robotData.error
-// // console.log()
-// return (
-//     <div className="console">
-//     <p>{errorMsg}</p>
-//   </div>
-// )
