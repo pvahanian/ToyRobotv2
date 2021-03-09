@@ -8,7 +8,6 @@ import React from "react";
 import { RobotData} from "../constants/constants";
 
 const Board: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
-  // let board = document.getElementById("board")
   if (robotData.x != null && robotData.y != null) {
     return (
       <div>
@@ -18,7 +17,6 @@ const Board: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
       </div>
     );
   } else {
-    // renderBoard(board)
     return <p>Board</p>;
   }
 };
