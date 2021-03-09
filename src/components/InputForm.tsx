@@ -5,6 +5,8 @@ import Board from "./Board";
 //import utils
 import splitInputString from "../utils/splitInputString";
 import initInputChecker from "../utils/initInputChecker";
+import renderBoard from '../utils/renderBoard'
+
 
 //import interface
 import { RobotData } from "../constants/constants";
@@ -18,6 +20,8 @@ const InputForm: React.FC = () => {
     y: null,
     facing: "",
   });
+
+  renderBoard(document.getElementById("board"))
 
   /**
    * Function: handleSubmit
@@ -55,6 +59,7 @@ const InputForm: React.FC = () => {
         </form>
         <Console robotData={robotData}/>
       </div>
+      <div id="board"></div>
       <Board robotData={robotData} />
     </div>
   );
