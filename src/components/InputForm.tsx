@@ -30,7 +30,6 @@ const InputForm: React.FC = () => {
     setInput("");
   };
 
-
   /**
    * Function: handleChange
    * Goal:    set Input state to user input

@@ -1,10 +1,11 @@
-import React from "react";
-import { RobotData } from "../constants/constants";
 /**
  * Function: Board
  * Param: String for location and char for direction facing
  * Goal: Take input and render it to board. Re-renders on every input.
  */
+
+ import React from "react";
+ import { RobotData } from "../constants/constants";
 
 const Board: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
   if (robotData.x != null && robotData.y != null) {

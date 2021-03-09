@@ -1,12 +1,13 @@
-import React from "react";
-import { RobotData } from "../constants/constants";
-import { useRef } from "react";
-
 /**
  * Function: Console
  * Goal:    To take input array of strings and display under the input field
  * Return:  Jsx div of the submitted commands
  */
+
+ import React from "react";
+ import { RobotData } from "../constants/constants";
+ import { useRef } from "react";
+ 
 
 const Console: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
   let message = useRef(document.createElement("p"))
