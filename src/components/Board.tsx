@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import { RobotData} from "../constants/constants";
+import { RobotData } from "../constants/constants";
 
 const Board: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
   if (robotData.x != null && robotData.y != null) {
