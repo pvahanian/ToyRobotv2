@@ -6,9 +6,15 @@
 
 import React from "react";
 import { RobotData } from "../constants/constants";
+import displayRobot from "../utils/displayRobot";
 
-const Board: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
+const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
+  robotData,
+  oldLocation,
+}) => {
   if (robotData.x != null && robotData.y != null) {
+    //Maybe trade to add more cheap checks here before trying to render data
+    oldLocation = displayRobot(robotData, oldLocation);
     return (
       <div>
         <p>{robotData.x}</p>
@@ -22,3 +28,5 @@ const Board: React.FC<{ robotData: RobotData }> = ({ robotData }) => {
 };
 
 export default Board;
+
+//need to find a way of having board not run unless data has been verified

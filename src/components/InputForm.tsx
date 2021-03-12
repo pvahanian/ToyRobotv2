@@ -5,8 +5,7 @@ import Board from "./Board";
 //import utils
 import splitInputString from "../utils/splitInputString";
 import initInputChecker from "../utils/initInputChecker";
-import renderBoard from '../utils/renderBoard'
-
+import renderBoard from "../utils/renderBoard";
 
 //import interface
 import { RobotData } from "../constants/constants";
@@ -20,8 +19,9 @@ const InputForm: React.FC = () => {
     y: null,
     facing: "",
   });
+  const [oldLocation, setOldLocation] = useState("");
 
-  renderBoard(document.getElementById("board"))
+  renderBoard(document.getElementById("board"));
 
   /**
    * Function: handleSubmit
@@ -30,6 +30,7 @@ const InputForm: React.FC = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    setOldLocation(String(robotData.x) + String(robotData.y));
     setRobotData(initInputChecker(splitInputString(input, robotData)));
     setInput("");
   };
@@ -57,10 +58,10 @@ const InputForm: React.FC = () => {
           />
           <button className="goButton">Go</button>
         </form>
-        <Console robotData={robotData}/>
+        <Console robotData={robotData} />
       </div>
       <div id="board"></div>
-      <Board robotData={robotData} />
+      <Board robotData={robotData} oldLocation={oldLocation} />
     </div>
   );
 };
