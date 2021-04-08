@@ -12,18 +12,13 @@ function displayRobot(robotData: RobotData, oldLocation: string): string {
   let checker = parseInt(oldLocation);
     
   if (oldLocation!="nullnull") {
-    console.log("robotPlace", oldLocation);
+    // console.log("robotPlace", oldLocation);
     let lastPlace: any = document.getElementById(oldLocation);
     lastPlace.style.background = null;
   }
 
   let robotPlace: any = document.getElementById(location);
-  // if(oldLocation!="nullnull"){
-  //     console.log(oldLocation)
-  //   }
-  // else{
-  //         console.log(parseInt(oldLocation))
-  // }
+
   robotPlace.style.backgroundImage = "url('https://svgur.com/i/Tqb.svg')";
   robotPlace.style.backgroundSize = "cover";
   robotPlace.style.zIndex = 2;

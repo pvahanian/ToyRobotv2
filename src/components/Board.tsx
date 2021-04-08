@@ -12,8 +12,9 @@ const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
   robotData,
   oldLocation,
 }) => {
-  if (robotData.x != null && robotData.y != null) {
+  if (robotData.x != null && robotData.y != null && robotData.y < 5 && robotData.y < 5) {
     //Maybe trade to add more cheap checks here before trying to render data
+    console.log("Robot Data", robotData.x, robotData.y)
     oldLocation = displayRobot(robotData, oldLocation);
     return (
       <div>
