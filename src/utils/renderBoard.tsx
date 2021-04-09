@@ -23,4 +23,5 @@ export default function renderBoard(board: any) {
       rowCounter++;
     }
   }
+  
 }

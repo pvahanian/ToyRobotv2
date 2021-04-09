@@ -7,24 +7,29 @@
 import React from "react";
 import { RobotData } from "../constants/constants";
 import displayRobot from "../utils/displayRobot";
+import renderBoard from "../utils/renderBoard";
 
-const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
-  robotData,
-  oldLocation,
-}) => {
+const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({robotData,oldLocation,}) => {
+  
   if (robotData.x != null && robotData.y != null && robotData.y < 5 && robotData.y < 5) {
-    //Maybe trade to add more cheap checks here before trying to render data
-    console.log("Robot Data", robotData.x, robotData.y)
+    renderBoard(document.getElementById("board"));
     oldLocation = displayRobot(robotData, oldLocation);
     return (
       <div>
+        <p>Robot Location</p>
         <p>{robotData.x}</p>
         <p>{robotData.y}</p>
         <p>{robotData.facing}</p>
       </div>
     );
   } else {
-    return <p>Board</p>;
+    // This needs to find a way of grabbing the element and just removing the robot background on it.  Error is 
+    // currently saying that it is a Read Only property.  Unsure how to resolve that at the moment.
+    let clearOldRobot:HTMLDivElement = document.getElementById(oldLocation)
+    if(clearOldRobot!==null){
+      clearOldRobot.style="none"
+    }
+    return <p>Place Robot on Board</p>;
   }
 };
 

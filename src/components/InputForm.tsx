@@ -5,7 +5,6 @@ import Board from "./Board";
 //import utils
 import splitInputString from "../utils/splitInputString";
 import initInputChecker from "../utils/initInputChecker";
-import renderBoard from "../utils/renderBoard";
 
 //import interface
 import { RobotData } from "../constants/constants";
@@ -20,8 +19,6 @@ const InputForm: React.FC = () => {
     facing: "",
   });
   const [oldLocation, setOldLocation] = useState("");
-
-  renderBoard(document.getElementById("board"));
 
   /**
    * Function: handleSubmit
@@ -47,6 +44,8 @@ const InputForm: React.FC = () => {
   return (
     <div className="displays">
       <div className="displaySpacer">
+        <Console robotData={robotData} />
+        <br></br>
         <form onSubmit={handleSubmit}>
           <input
             onChange={handleChange}
@@ -58,7 +57,7 @@ const InputForm: React.FC = () => {
           />
           <button className="goButton">Go</button>
         </form>
-        <Console robotData={robotData} />
+      
       </div>
       <div id="board"></div>
       <Board robotData={robotData} oldLocation={oldLocation} />

@@ -7,7 +7,6 @@ import InputForm from "./components/InputForm.tsx";
 
 function App() {
   return (
-    // <RecoilRoot>
       <div className="App">
         <div id="description">
           <h2 className="title-id">Description</h2>
@@ -53,7 +52,6 @@ function App() {
           </div>
         </div>
       </div>
-    // </RecoilRoot>
   );
 }
 

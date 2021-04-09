@@ -12,9 +12,9 @@ function displayRobot(robotData: RobotData, oldLocation: string): string {
     
   if (oldLocation !== "nullnull") {
     let lastPlace: any = document.getElementById(oldLocation);
+    if(lastPlace!== null)
     lastPlace.style.background = null;
   }
-
   let robotPlace: any = document.getElementById(location);
 
   robotPlace.style.backgroundImage = "url('https://svgur.com/i/Tqb.svg')";
