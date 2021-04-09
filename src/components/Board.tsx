@@ -25,10 +25,10 @@ const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({robotDa
   } else {
     // This needs to find a way of grabbing the element and just removing the robot background on it.  Error is 
     // currently saying that it is a Read Only property.  Unsure how to resolve that at the moment.
-    let clearOldRobot:HTMLDivElement = document.getElementById(oldLocation)
-    if(clearOldRobot!==null){
-      clearOldRobot.style="none"
-    }
+    // let clearOldRobot:HTMLDivElement = document.getElementById(oldLocation)
+    // if(clearOldRobot!==null){
+    //   clearOldRobot.style="none"
+    // }
     return <p>Place Robot on Board</p>;
   }
 };
