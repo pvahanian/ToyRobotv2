@@ -17,13 +17,9 @@ function moveOnBoard(robotData: RobotData): RobotData {
     return robotData;
   }
 
-  const maxChecker =
-    robotData.x <= tableDimension.x - 1 && robotData.y <= tableDimension.y - 1;
-  const minChecker = robotData.x > 0 && robotData.y > 0;
-
   switch (robotData.facing) {
     case "NORTH":
-      if (maxChecker) {
+      if (robotData.y < tableDimension.y - 1) {
         robotData.y += 1;
         break;
       } else {
@@ -31,7 +27,7 @@ function moveOnBoard(robotData: RobotData): RobotData {
         break;
       }
     case "EAST":
-      if (maxChecker) {
+      if (robotData.x < tableDimension.x - 1) {
         robotData.x += 1;
         break;
       } else {
@@ -39,7 +35,7 @@ function moveOnBoard(robotData: RobotData): RobotData {
         break;
       }
     case "SOUTH":
-      if (minChecker) {
+      if (robotData.y > 0) {
         robotData.y -= 1;
         break;
       } else {
@@ -47,7 +43,7 @@ function moveOnBoard(robotData: RobotData): RobotData {
         break;
       }
     case "WEST":
-      if (minChecker) {
+      if (robotData.x > 0) {
         robotData.x -= 1;
         break;
       } else {
