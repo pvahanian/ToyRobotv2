@@ -28,7 +28,7 @@ const InputForm: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setOldLocation(String(robotData.x) + String(robotData.y));
-    setRobotData(initInputChecker(splitInputString(input, robotData)));
+    setRobotData(initInputChecker(splitInputString(input, robotData),oldLocation));
     setInput("");
   };
 

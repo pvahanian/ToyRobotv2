@@ -7,8 +7,13 @@
 
 import { RobotData, tableDimension } from "../constants/constants";
 
-function placeOnBoard(robotData: RobotData): RobotData {
+function placeOnBoard(robotData: RobotData,oldLocation:string): RobotData {
 
+  if (oldLocation !== "nullnull") {
+    let lastPlace: any = document.getElementById(oldLocation);
+    if(lastPlace!== null)
+    lastPlace.style.background = null;
+  }
 
   if (robotData.x === null || robotData.y === null) {
     robotData.error = "X and Y coordinates need to be Valid";
@@ -43,12 +48,9 @@ function placeOnBoard(robotData: RobotData): RobotData {
   }
   robotData.x=null
   robotData.y=null
-  robotData.error =
-    "Need Valid Place Command";
+  robotData.error = "Need Valid Place Command";
   return robotData;
-  //Check to see if x is a number y is number and facing is equal to n s e or w
-  // if it is return them as an array for our setcoord state
-  // else return null
+ 
 }
 
 export default placeOnBoard;

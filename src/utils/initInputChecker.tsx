@@ -11,10 +11,10 @@ import turnRight from "./turnRight";
 
 import { RobotData } from "../constants/constants";
 
-function initInputChecker(robotData: RobotData): RobotData {
+function initInputChecker(robotData: RobotData, oldLocation:string): RobotData {
   switch (robotData.command) {
     case "PLACE":
-      return placeOnBoard(robotData);
+      return placeOnBoard(robotData,oldLocation);
     case "MOVE":
       return moveOnBoard(robotData);
     case "REPORT":
