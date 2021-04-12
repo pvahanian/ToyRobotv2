@@ -28,7 +28,7 @@ function App() {
         <h2 className="title-id">How to operate the robot </h2>
         <ul>
           <li>
-            PLACE X,Y,F - will put the toy robot on the table in position X,Y
+            PLACE, X,Y,F - will put the toy robot on the table in position X,Y
             and facing NORTH, SOUTH, EAST or WEST.
           </li>
           <li>
@@ -45,7 +45,7 @@ function App() {
           </li>
         </ul>
         <h2 className="title-id">Example:</h2>
-          <li> 1. Place 0,0, North</li>
+          <li> 1. Place, 0,0, North</li>
           <li> 2. Move </li>
           <li> 3. Report </li>
           <li> 4. Output: REPORT 0 1 NORTH</li>
