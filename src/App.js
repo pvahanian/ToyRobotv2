@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-// import { RecoilRoot } from "recoil";
 
 //import components
 import InputForm from "./components/InputForm.tsx";
