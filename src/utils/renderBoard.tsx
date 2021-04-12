@@ -1,3 +1,10 @@
+/**
+ * Function: renderBoard
+ * Params:  Board html element 
+ * Goal:    Render a board to the DOM based on tableDimensions 
+ * Return:  N/A
+ */
+
 import { tableDimension } from "../constants/constants";
 
 const rows = tableDimension.x;

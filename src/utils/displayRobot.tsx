@@ -1,7 +1,8 @@
 /**
  * Function: displayRobot
- * Goal:    Display robot image on board
- * Return:
+ * Params:  RobotData object with oldLocation string
+ * Goal:    Display robot image on board while removing old location image
+ * Return:  Location to be used as oldLocation
  */
 
 import { RobotData } from "../constants/constants";

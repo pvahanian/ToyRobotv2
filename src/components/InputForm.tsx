@@ -1,3 +1,9 @@
+/**
+ * Function: InputForm
+ * Param: No parms required
+ * Goal: Take input and pass it through to checker functions
+ */
+
 import React, { useState, FormEvent } from "react";
 import Console from "./Console";
 import Board from "./Board";
