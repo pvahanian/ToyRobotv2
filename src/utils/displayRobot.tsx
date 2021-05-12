@@ -17,10 +17,28 @@ function displayRobot(robotData: RobotData, oldLocation: string): string {
   }
   
   let robotPlace: any = document.getElementById(location);
-
+  
   robotPlace.style.backgroundImage = "url('https://svgur.com/i/Tqb.svg')";
   robotPlace.style.backgroundSize = "cover";
   robotPlace.style.zIndex = 2;
+
+  //Used to check what direction the robot is facing to determine rotation
+  switch (robotData.facing) {
+      case "NORTH":
+        robotPlace.style.transform ="rotate(0deg)"
+        break;
+      case "EAST":
+        robotPlace.style.transform ="rotate(90deg)"
+        break;
+      case "SOUTH":
+        robotPlace.style.transform ="rotate(180deg)"
+        break;
+      case "WEST":
+        robotPlace.style.transform ="rotate(270deg)"
+        break;
+      default:
+        break;
+    }
 
   return location;
 }
