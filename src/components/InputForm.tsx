@@ -1,6 +1,6 @@
 /**
  * Function: InputForm
- * Param: No parms required
+ * Param: No params required
  * Goal: Take input and pass it through to checker functions
  */
 
