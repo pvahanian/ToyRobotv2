@@ -37,6 +37,11 @@ const InputForm: React.FC = () => {
     setRobotData(initInputChecker(splitInputString(input, robotData),oldLocation));
     setInput("");
   };
+  
+  const defaultStart = () => {
+    setOldLocation(String(robotData.x) + String(robotData.y));
+    setRobotData({command: "PLACE", error: "", x: 0, y: 0, facing: "NORTH"});
+  }
 
   /**
    * Function: handleChange
@@ -63,7 +68,8 @@ const InputForm: React.FC = () => {
           />
           <button className="goButton">Go</button>
         </form>
-      
+      <br/>
+      <button className="quickStart" onClick={defaultStart} >Start at Place, 0,0, North</button>
       </div>
       <div id="board"></div>
       <Board robotData={robotData} oldLocation={oldLocation} />
