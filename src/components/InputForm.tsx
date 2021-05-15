@@ -26,6 +26,8 @@ const InputForm: React.FC = () => {
   });
   const [oldLocation, setOldLocation] = useState("");
 
+
+
   /**
    * Function: handleSubmit
    * Goal:    onClick, set InputArrayOfStrings state and setInput back to ""
@@ -41,6 +43,24 @@ const InputForm: React.FC = () => {
   const defaultStart = () => {
     setOldLocation(String(robotData.x) + String(robotData.y));
     setRobotData({command: "PLACE", error: "", x: 0, y: 0, facing: "NORTH"});
+    document.addEventListener('keydown', function(event){
+      console.log(event.keyCode)
+      // if(event.keyCode===37){
+      //   setOldLocation(String(robotData.x) + String(robotData.y));
+      //   setRobotData(initInputChecker(splitInputString("left", robotData),oldLocation));
+      // }
+      // if(event.keyCode===39){
+      //   setOldLocation(String(robotData.x) + String(robotData.y));
+      //   setRobotData(initInputChecker(splitInputString("right", robotData),oldLocation));
+      // }
+    })
+    // Keys needed
+    //   Key: ArrowLeft with keycode 37 has been pressed
+    // Key: ArrowUp with keycode 38 has been pressed
+    //  Key: ArrowRight with keycode 39 has been pressed
+    //  Key: ArrowDown with keycode 40 has been pressed
+    
+
   }
 
   /**
@@ -69,6 +89,7 @@ const InputForm: React.FC = () => {
           <button className="goButton">Go</button>
         </form>
       <br/>
+      <h3>This enables easy mode</h3>
       <button className="quickStart" onClick={defaultStart} >Start at Place, 0,0, North</button>
       </div>
       <div id="board"></div>
