@@ -79,6 +79,7 @@ const InputForm: React.FC = () => {
         </form>
         <br />
         <h3>This enables easy mode</h3>
+        <div className="arrow bounce"></div>
         <Button
           variant="contained"
           color="primary"
