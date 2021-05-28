@@ -44,11 +44,6 @@ function App() {
             any form, but standard output is sufficient.
           </li>
         </ul>
-        <h2 className="title-id">Example:</h2>
-          <li> 1. Place, 0,0, North</li>
-          <li> 2. Move </li>
-          <li> 3. Report </li>
-          <li> 4. Output: REPORT 0 1 NORTH</li>
       </div>
       <div id="bottomHalf">
         <div>

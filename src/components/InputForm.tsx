@@ -5,6 +5,7 @@
  */
 
 import React, { useState, FormEvent } from "react";
+import Button from "@material-ui/core/Button";
 import Console from "./Console";
 import Board from "./Board";
 
@@ -35,15 +36,20 @@ const InputForm: React.FC = () => {
     e.preventDefault();
     setOldLocation(String(robotData.x) + String(robotData.y));
     // console.log(input==="Place, 0,0, north")
-    setRobotData(initInputChecker(splitInputString(input, robotData),oldLocation));
+    setRobotData(
+      initInputChecker(splitInputString(input, robotData), oldLocation)
+    );
     setInput("");
-  }; 
+  };
   const handleDefault = () => {
     setOldLocation(String(robotData.x) + String(robotData.y));
-    setRobotData(initInputChecker(splitInputString("Place, 0,0, north", robotData),oldLocation));
+    setRobotData(
+      initInputChecker(
+        splitInputString("Place, 0,0, north", robotData),
+        oldLocation
+      )
+    );
   };
-  
-
 
   /**
    * Function: handleChange
@@ -57,7 +63,6 @@ const InputForm: React.FC = () => {
   return (
     <div className="displays">
       <div className="displaySpacer">
-        <Console robotData={robotData} />
         <br></br>
         <form onSubmit={handleSubmit}>
           <input
@@ -68,16 +73,34 @@ const InputForm: React.FC = () => {
             value={input}
             placeholder="Input robot commands!"
           />
-          <button className="goButton">Go</button>
+          <Button variant="contained" color="primary" className="goButton">
+            Go
+          </Button>
         </form>
-      <br/>
-      <h3>This enables easy mode</h3>
-      <button className="quickStart" onClick={handleDefault} >Quick Start</button>
+        <br />
+        <h3>This enables easy mode</h3>
+        <Button
+          variant="contained"
+          color="primary"
+          className="quickStart"
+          onClick={handleDefault}
+        >
+          Quick Start
+        </Button>
       </div>
-      <div id="board"></div>
-      <Board robotData={robotData} oldLocation={oldLocation} />
+      <div id="showInfo">
+        {/* <Console robotData={robotData} /> */}
+        <div id="board"></div>
+        <Board robotData={robotData} oldLocation={oldLocation} />
+      </div>
     </div>
   );
 };
 
 export default InputForm;
+
+{/* <h2 className="title-id">Example:</h2>
+          <li> 1. Place, 0,0, North</li>
+          <li> 2. Move </li>
+          <li> 3. Report </li>
+          <li> 4. Output: REPORT 0 1 NORTH</li> */}

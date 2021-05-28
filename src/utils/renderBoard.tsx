@@ -12,7 +12,6 @@ const cols = tableDimension.y;
 
 export default function renderBoard(board: any) {
   let boardCheck = document.getElementsByClassName("row");
-
   if (boardCheck.length === 0) {
     let rowCounter = 0;
     for (let i = 0; i < rows; ++i) {

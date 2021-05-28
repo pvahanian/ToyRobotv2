@@ -14,19 +14,19 @@
   margin-top: 2%;
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 .inputBox {
   width: 20vw;
   height: 25px;
   border-radius: 5px;
+  margin-right: 25px;
 }
 .goButton {
   width: 6vw;
   height: 30px;
   background-color: purple;
   color: white;
-  margin-left: 5px;
   border-radius: 5px;
 }
 
@@ -35,9 +35,11 @@
 }
 .displays {
   display: flex;
+  justify-content: end;
+  width: 100vw;
 }
 .displaySpacer {
-  width: 50vw;
+  width: 35vw;
 }
 .console {
   background-color: lightgrey;
@@ -60,10 +62,15 @@
 }
 
 .square{
-  width: 30px;
-  height: 30px;
-  border: 1px solid black;
+  width: 60px;
+  height: 60px;
+  border: 2px solid darkgrey;
+  padding: 3px;
 }
 #board{
   display: flex;
+}
+#showInfo{
+  display: flex;
+  flex-direction: column-reverse;
 }
