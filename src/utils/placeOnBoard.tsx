@@ -8,6 +8,7 @@
 import { RobotData, tableDimension } from "../constants/constants";
 
 function placeOnBoard(robotData: RobotData,oldLocation:string): RobotData {
+  console.log(robotData,"Coming in Robot Data", "oldlocatoin =", oldLocation)
 
   if (oldLocation !== "nullnull") {
     let lastPlace: any = document.getElementById(oldLocation);

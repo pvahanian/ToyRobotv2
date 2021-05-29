@@ -28,22 +28,9 @@ function App() {
         <h2 className="title-id">How to operate the robot </h2>
         <ul>
           <li>
-            PLACE, X,Y,F - will put the toy robot on the table in position X,Y
-            and facing NORTH, SOUTH, EAST or WEST.
+            USE:  Up Arrow to move, LEFT and RIGHT arrows to change direction
           </li>
-          <li>
-            MOVE - will move the toy robot one unit forward in the direction it
-            is currently facing.
-          </li>
-          <li>
-            LEFT | RIGHT - will rotate the robot 90 degrees in the specified
-            direction without changing the position of the robot.
-          </li>
-          <li>
-            REPORT - will announce the X,Y and F of the robot. This can be in
-            any form, but standard output is sufficient.
-          </li>
-        </ul>
+          </ul>
       </div>
       <div id="bottomHalf">
         <div>

@@ -6,7 +6,6 @@
 
 import React, { useState, FormEvent } from "react";
 import Button from "@material-ui/core/Button";
-import Console from "./Console";
 import Board from "./Board";
 
 //import utils
@@ -16,8 +15,14 @@ import initInputChecker from "../utils/initInputChecker";
 //import interface
 import { RobotData } from "../constants/constants";
 
+//Delete later
+import turnLeft from '../utils/turnLeft'
+import turnRight from '../utils/turnRight'
+import moveOnBoard from '../utils/moveOnBoard'
+
 const InputForm: React.FC = () => {
   const [input, setInput] = useState("");
+  const [robotStart, setRobotStart] =useState(true)
   const [robotData, setRobotData] = useState<RobotData>({
     command: "",
     error: "",
@@ -35,20 +40,66 @@ const InputForm: React.FC = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setOldLocation(String(robotData.x) + String(robotData.y));
-    // console.log(input==="Place, 0,0, north")
+    console.log(input)
     setRobotData(
       initInputChecker(splitInputString(input, robotData), oldLocation)
     );
     setInput("");
   };
-  const handleDefault = () => {
+
+  /**
+   * Function: HandleDefault
+   * Goal:    this will move to be the default login for the place on board and movement.  Once robot is placed on board the button will be disabled to not reset robot
+
+
+
+   */
+    const handleDefault = () => {
+    if(robotStart){
     setOldLocation(String(robotData.x) + String(robotData.y));
-    setRobotData(
-      initInputChecker(
-        splitInputString("Place, 0,0, north", robotData),
-        oldLocation
-      )
-    );
+    setRobotData(initInputChecker(splitInputString("Place, 0,0, north", robotData),oldLocation));
+    
+    document.addEventListener('keydown', function(event){
+       if(event.keyCode===37){
+        setOldLocation(String(robotData.x) + String(robotData.y));
+        const runthis = () => {
+          let newFacing = turnLeft(robotData)
+          setRobotData({
+            ...robotData,
+            facing:newFacing.facing,
+          })
+        }
+        runthis()
+        setInput("")
+      }
+        if(event.keyCode===38){
+        setOldLocation(String(robotData.x) + String(robotData.y));
+        const runthis = () => {
+          let newSpot = moveOnBoard(robotData)
+          setRobotData({
+            ...robotData,
+            x:newSpot.x,
+            y:newSpot.y,
+          })
+        }
+        runthis()
+        setInput("")
+      }
+       if(event.keyCode===39){
+        setOldLocation(String(robotData.x) + String(robotData.y));
+        const runthis = () => {
+          let newFacing = turnRight(robotData)
+          setRobotData({
+            ...robotData,
+            facing:newFacing.facing,
+          })
+        }
+        runthis()
+        setInput("")
+      }
+    })
+    setRobotStart(false)
+    }
   };
 
   /**
@@ -64,7 +115,7 @@ const InputForm: React.FC = () => {
     <div className="displays">
       <div className="displaySpacer">
         <br></br>
-        <form onSubmit={handleSubmit}>
+        {/* <form > onSubmit={handleSubmit} 
           <input
             onChange={handleChange}
             className="inputBox"
@@ -73,12 +124,13 @@ const InputForm: React.FC = () => {
             value={input}
             placeholder="Input robot commands!"
           />
-          <Button variant="contained" color="primary" className="goButton">
+          <Button variant="contained" color="primary" className="goButton" onClick={handleSubmit}>
             Go
           </Button>
-        </form>
+        </form> 
+        */}
         <br />
-        <h3>This enables easy mode</h3>
+        <h3>Place Robot on the Board</h3>
         <div className="arrow bounce"></div>
         <Button
           variant="contained"
@@ -90,7 +142,6 @@ const InputForm: React.FC = () => {
         </Button>
       </div>
       <div id="showInfo">
-        {/* <Console robotData={robotData} /> */}
         <div id="board"></div>
         <Board robotData={robotData} oldLocation={oldLocation} />
       </div>
@@ -99,9 +150,3 @@ const InputForm: React.FC = () => {
 };
 
 export default InputForm;
-
-{/* <h2 className="title-id">Example:</h2>
-          <li> 1. Place, 0,0, North</li>
-          <li> 2. Move </li>
-          <li> 3. Report </li>
-          <li> 4. Output: REPORT 0 1 NORTH</li> */}

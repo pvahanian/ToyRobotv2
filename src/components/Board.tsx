@@ -16,7 +16,7 @@ const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({robotDa
     oldLocation = displayRobot(robotData, oldLocation);
     return (
       <div>
-        <p>Robot Location</p>
+        <h3>Robot Location</h3>
         <p>{robotData.x}</p>
         <p>{robotData.y}</p>
         <p>{robotData.facing}</p>

@@ -18,9 +18,11 @@ function displayRobot(robotData: RobotData, oldLocation: string): string {
   
   let robotPlace: any = document.getElementById(location);
   
-  robotPlace.style.backgroundImage = "url('https://svgur.com/i/Tqb.svg')";
-  robotPlace.style.backgroundSize = "cover";
+  robotPlace.style.backgroundImage = "url('https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif')";
+  robotPlace.style.backgroundSize = "contain";
   robotPlace.style.zIndex = 2;
+  // Options https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif bouncing gif
+  //
 
   //Used to check what direction the robot is facing to determine rotation
   switch (robotData.facing) {
