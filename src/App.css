@@ -108,3 +108,33 @@
     transform: translateY(-15px);
   }
 }
+
+.arrows{
+  font-size: 70px;
+  border: 1px solid black;
+  width: 55px;
+  margin-left: 10px;
+  height: 33px;
+  border-radius: 23px;
+  background-color: whitesmoke;
+  color:rgb(20, 20, 20);
+}
+#top{
+  padding-top: 30px;
+  margin-bottom: 3px;
+
+}
+#left{
+  padding: 10px;
+}
+#right{
+  padding: 10px;
+
+}
+#arrowHolder{
+  display: flex;
+  align-items: baseline;
+}
+.highlight{
+  background-color: yellowgreen;
+}
