@@ -35,10 +35,10 @@
 }
 .displays {
   display: flex;
-  justify-content:flex-start;
+  justify-content:center;
   width: 90vw;
 }
-.displaySpacer {
+#displaySpacer {
   width: 35vw;
 }
 .console {
@@ -71,9 +71,12 @@
   display: flex;
 }
 #showInfo{
-  display: flex;
+  display: none;
   flex-direction: column-reverse;
   margin:37px 0px;
+ transition: opacity 2s linear;  
+  transform:translate(0);
+  opacity: 1;
 }
 
 .arrow
@@ -93,6 +96,9 @@
   background-size: contain;
 }
 
+.hidden  {
+  display: none;
+}
 .bounce {
   animation: bounce 2s 3;
 }

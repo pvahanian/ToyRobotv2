@@ -56,6 +56,10 @@ const InputForm: React.FC = () => {
 
     if(robotStart){
     // TransitionsModal()
+    let dis = document.getElementById("showInfo")!;
+    dis.style.display="flex"
+    let diss = document.getElementById("displaySpacer")!
+    diss.classList.toggle('hidden')
     setOldLocation(String(robotData.x) + String(robotData.y));
     setRobotData(initInputChecker(splitInputString("Place, 0,0, north", robotData),oldLocation));
     
@@ -117,7 +121,7 @@ const InputForm: React.FC = () => {
 
   return (
     <div className="displays">
-      <div className="displaySpacer">
+      <div id="displaySpacer">
         <br></br>
         <br />
         <div></div>
