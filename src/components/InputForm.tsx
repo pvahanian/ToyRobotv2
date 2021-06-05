@@ -131,12 +131,15 @@ const InputForm: React.FC = () => {
         >
           Start
         </Button>
+        
       </div>
+      
       <div id="showInfo">
+        <KeyBoard />
         <div id="board"></div>
         <Board robotData={robotData} oldLocation={oldLocation} />
       </div>
-      <KeyBoard />
+    
     </div>
   );
 };

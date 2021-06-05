@@ -134,6 +134,8 @@
 #arrowHolder{
   display: flex;
   align-items: baseline;
+  justify-content: center;
+  border: 1px solid;
 }
 .highlight{
   background-color: yellowgreen;
