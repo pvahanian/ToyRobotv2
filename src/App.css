@@ -111,12 +111,11 @@
 
 .arrows{
   font-size: 70px;
-  border: 1px solid black;
   width: 55px;
   margin-left: 10px;
   height: 33px;
   border-radius: 23px;
-  background-color: whitesmoke;
+  background-color: #e1e1e8;
   color:rgb(20, 20, 20);
 }
 #top{
