@@ -135,7 +135,7 @@
   display: flex;
   align-items: baseline;
   justify-content: center;
-  border: 1px solid;
+  padding-right: 10px;
 }
 .highlight{
   background-color: yellowgreen;
