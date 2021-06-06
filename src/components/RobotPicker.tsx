@@ -4,6 +4,9 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 
+import { RobotData } from "../constants/constants";
+
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     modal: {
@@ -20,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function RobotPicker() {
+const RobotPicker: React.FC<{ robotData: RobotData }> = ({robotData}) =>{
   //eslint-disable-next-line
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -30,6 +33,7 @@ export default function RobotPicker() {
   };
 
   const handleClose = () => {
+    
     setOpen(false);
   };
 
@@ -53,12 +57,14 @@ export default function RobotPicker() {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Select your Robot</h2>
-            <img className="robots" src={"https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif"}/>
-            <img className="robots" src={"https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif"}/>
-            <img className="robots" src={"https://i.giphy.com/media/l0MYKtrxlkiYE596g/giphy.webp"}/>
+            <img className="robots" src={"https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif"} onClick={handleClose}/>
+            <img className="robots" src={"https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif"} onClick={handleClose}/>
+            <img className="robots" src={"https://i.giphy.com/media/l0MYKtrxlkiYE596g/giphy.webp"}  onClick={handleClose}/>
           </div>
         </Fade>
       </Modal>
     </div>
   );
 }
+
+export default RobotPicker;

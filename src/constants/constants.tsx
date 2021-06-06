@@ -14,5 +14,6 @@ export interface RobotData {
   error?:string | undefined, 
   x: number | null,
   y: number | null,
-  facing:string
+  facing:string,
+  image:string,
 } 

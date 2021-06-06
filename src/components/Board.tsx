@@ -9,7 +9,7 @@ import { RobotData } from "../constants/constants";
 import displayRobot from "../utils/displayRobot";
 import renderBoard from "../utils/renderBoard";
 
-const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({robotData,oldLocation,}) => {
+const Board: React.FC<{ robotData: RobotData, oldLocation: string}> = ({robotData,oldLocation}) => {
   
   if (robotData.x != null && robotData.y != null && robotData.y < 5 && robotData.y < 5) {
     renderBoard(document.getElementById("board"));

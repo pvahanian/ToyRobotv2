@@ -33,6 +33,7 @@ const InputForm: React.FC = () => {
     x: null,
     y: null,
     facing: "",
+    image:"https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif",
   });
   const [oldLocation, setOldLocation] = useState("");
 
@@ -130,7 +131,7 @@ const InputForm: React.FC = () => {
   return (
     <div className="displays">
       <div id="displaySpacer">
-        <RobotPicker />
+        <RobotPicker robotData={robotData}/>
         <br></br>
         <br />
         <div></div>
