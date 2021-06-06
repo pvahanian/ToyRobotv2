@@ -8,11 +8,11 @@ import React, { useState, FormEvent } from "react";
 import Button from "@material-ui/core/Button";
 import Board from "./Board";
 import KeyBoard from './KeyBoard'
+import RobotPicker from './RobotPicker'
 
 //import utils
 import splitInputString from "../utils/splitInputString";
 import initInputChecker from "../utils/initInputChecker";
-import TransitionsModal from '../utils/robotPicker'
 
 //import interface
 import { RobotData } from "../constants/constants";
@@ -130,6 +130,7 @@ const InputForm: React.FC = () => {
   return (
     <div className="displays">
       <div id="displaySpacer">
+        <RobotPicker />
         <br></br>
         <br />
         <div></div>

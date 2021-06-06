@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export default function TransitionsModal() {
+export default function RobotPicker() {
   //eslint-disable-next-line
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -36,7 +36,7 @@ export default function TransitionsModal() {
   return (
     <div>
       <button type="button" onClick={handleOpen}>
-        react-transition-group
+        Select Robot
       </button>
       <Modal
         aria-labelledby="transition-modal-title"
@@ -52,8 +52,10 @@ export default function TransitionsModal() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Transition modal</h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+            <h2 id="transition-modal-title">Select your Robot</h2>
+            <img className="robots" src={"https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif"}/>
+            <img className="robots" src={"https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif"}/>
+            <img className="robots" src={"https://i.giphy.com/media/l0MYKtrxlkiYE596g/giphy.webp"}/>
           </div>
         </Fade>
       </Modal>
