@@ -40,7 +40,17 @@
 }
 #displaySpacer {
   width: 35vw;
+  transition: opacity .15s linear;
 }
+
+#showInfo{
+  display: none;
+  flex-direction: column-reverse;
+  margin:37px 0px;
+  transition: opacity .55s;
+  opacity: 0;
+ }
+
 .console {
   background-color: lightgrey;
   width: 27vw;
@@ -70,14 +80,7 @@
 #board{
   display: flex;
 }
-#showInfo{
-  display: none;
-  flex-direction: column-reverse;
-  margin:37px 0px;
- transition: opacity 2s linear;  
-  transform:translate(0);
-  opacity: 1;
-}
+
 
 .arrow
 {

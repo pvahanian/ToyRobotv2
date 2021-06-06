@@ -56,10 +56,18 @@ const InputForm: React.FC = () => {
 
     if(robotStart){
     // TransitionsModal()
-    let dis = document.getElementById("showInfo")!;
-    dis.style.display="flex"
-    let diss = document.getElementById("displaySpacer")!
-    diss.classList.toggle('hidden')
+    let startDisplay = document.getElementById("displaySpacer")!
+    let boardDisplay = document.getElementById("showInfo")!;
+    startDisplay.style.opacity="0"
+    setTimeout(() => {
+      startDisplay.classList.toggle('hidden')
+      boardDisplay.style.display="flex"
+    }, 200);
+    setTimeout(() => {
+      boardDisplay.style.opacity="1"
+    }, 450);
+ 
+
     setOldLocation(String(robotData.x) + String(robotData.y));
     setRobotData(initInputChecker(splitInputString("Place, 0,0, north", robotData),oldLocation));
     
