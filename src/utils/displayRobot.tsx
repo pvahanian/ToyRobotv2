@@ -17,7 +17,6 @@ function displayRobot(robotData: RobotData, oldLocation: string): string {
   }
   
   let robotPlace: any = document.getElementById(location);
-  
   robotPlace.style.backgroundImage = `url(${robotData.image})`;
   robotPlace.style.backgroundSize = "contain";
   robotPlace.style.zIndex = 2;
