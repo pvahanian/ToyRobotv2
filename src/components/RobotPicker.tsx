@@ -27,13 +27,18 @@ const RobotPicker: React.FC<{ robotData: RobotData }> = ({robotData}) =>{
   //eslint-disable-next-line
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const images = [
+  "https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif",
+  "https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif",
+  "https://i.giphy.com/media/l0MYKtrxlkiYE596g/giphy.webp"
+  ]
 
   const handleOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = () => {
-    
+  const handleClose = (event:any) => {
+    robotData.image=images[event.target.id]
     setOpen(false);
   };
 
@@ -57,9 +62,9 @@ const RobotPicker: React.FC<{ robotData: RobotData }> = ({robotData}) =>{
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Select your Robot</h2>
-            <img className="robots" src={"https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif"} onClick={handleClose}/>
-            <img className="robots" src={"https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif"} onClick={handleClose}/>
-            <img className="robots" src={"https://i.giphy.com/media/l0MYKtrxlkiYE596g/giphy.webp"}  onClick={handleClose}/>
+            <img className="robots" id="0" src={"https://media.tenor.com/images/511640cc209ce49552fc7c4a1b2c334f/tenor.gif"} onClick={handleClose}/>
+            <img className="robots" id="1" src={"https://media.tenor.com/images/19a2013ea8329376f3ee6285dad9d55a/tenor.gif"} onClick={handleClose}/>
+            <img className="robots" id="2" src={"https://i.giphy.com/media/l0MYKtrxlkiYE596g/giphy.webp"}  onClick={handleClose}/>
           </div>
         </Fade>
       </Modal>
