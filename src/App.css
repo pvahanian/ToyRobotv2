@@ -160,3 +160,8 @@
 .robots:hover{
 background-color: lightgreen;
 }
+#arrowKeysInstructions{
+  margin:10px;
+  padding:5px;
+  display:none;
+}

@@ -9,17 +9,30 @@ import { RobotData } from "../constants/constants";
 import displayRobot from "../utils/displayRobot";
 import renderBoard from "../utils/renderBoard";
 
-const Board: React.FC<{ robotData: RobotData, oldLocation: string}> = ({robotData,oldLocation}) => {
-  
-  if (robotData.x != null && robotData.y != null && robotData.y < 5 && robotData.y < 5) {
+const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
+  robotData,
+  oldLocation,
+}) => {
+  if (
+    robotData.x != null &&
+    robotData.y != null &&
+    robotData.y < 5 &&
+    robotData.y < 5
+  ) {
     renderBoard(document.getElementById("board"));
     oldLocation = displayRobot(robotData, oldLocation);
+    const boardHolder= document.getElementById("board")!
+    boardHolder.addEventListener("click", function () {
+      let arrowKeys:HTMLElement = document.getElementById("arrowKeysInstructions")!
+      arrowKeys.setAttribute('style',"display:flex") 
+    })
     return (
       <div>
         <h3>Robot Location</h3>
         <p>{robotData.x}</p>
         <p>{robotData.y}</p>
         <p>{robotData.facing}</p>
+        <div id="arrowKeysInstructions">Please use your Arrow keys</div>
       </div>
     );
   } else {
