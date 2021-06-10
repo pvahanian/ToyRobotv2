@@ -73,7 +73,9 @@ const InputForm: React.FC = () => {
     setRobotData(initInputChecker(splitInputString("Place, 0,0, north", robotData),oldLocation));
     
     document.addEventListener('keydown', function(event){
-       if(event.keyCode===37){
+      let arrowKeys:HTMLElement = document.getElementById("arrowKeysInstructions")!
+      arrowKeys.setAttribute('style',"display:none") 
+      if(event.keyCode===37){
         setOldLocation(String(robotData.x) + String(robotData.y));
         const runthis = () => {
           let newFacing = turnLeft(robotData)

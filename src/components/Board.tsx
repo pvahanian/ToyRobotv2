@@ -24,10 +24,10 @@ const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
     const boardHolder= document.getElementById("board")!
     boardHolder.addEventListener("click", function () {
       let arrowKeys:HTMLElement = document.getElementById("arrowKeysInstructions")!
-      arrowKeys.setAttribute('style',"display:flex") 
+      arrowKeys.setAttribute('style',"display:block") 
     })
     return (
-      <div>
+      <div id="robotLocation">
         <h3>Robot Location</h3>
         <p>{robotData.x}</p>
         <p>{robotData.y}</p>

@@ -46,7 +46,7 @@
 #showInfo{
   display: none;
   flex-direction: column-reverse;
-  margin:37px 0px;
+  margin: -5px 0px;
   transition: opacity .55s;
   opacity: 0;
  }
@@ -144,6 +144,7 @@
   align-items: baseline;
   justify-content: center;
   padding-right: 10px;
+  max-height: 95px;
 }
 .highlight{
   background-color: yellowgreen;
@@ -160,8 +161,12 @@
 .robots:hover{
 background-color: lightgreen;
 }
+#robotLocation{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 #arrowKeysInstructions{
-  margin:10px;
-  padding:5px;
+  color:red;
   display:none;
 }
