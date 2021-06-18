@@ -4,10 +4,11 @@
  * Goal: Take input and render it to board. Re-renders on every input.
  */
 
-import React from "react";
-import { RobotData } from "../constants/constants";
-import displayRobot from "../utils/displayRobot";
-import renderBoard from "../utils/renderBoard";
+import React from "react"
+import { RobotData } from "../constants/constants"
+import displayRobot from "../utils/displayRobot"
+import renderBoard from "../utils/renderBoard"
+import KeyBoard from "./KeyBoard"
 
 const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
   robotData,
@@ -19,12 +20,14 @@ const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
     robotData.y < 5 &&
     robotData.y < 5
   ) {
-    renderBoard(document.getElementById("board"));
-    oldLocation = displayRobot(robotData, oldLocation);
-    const boardHolder= document.getElementById("board")!
+    renderBoard(document.getElementById("board"))
+    oldLocation = displayRobot(robotData, oldLocation)
+    const boardHolder = document.getElementById("board")!
     boardHolder.addEventListener("click", function () {
-      let arrowKeys:HTMLElement = document.getElementById("arrowKeysInstructions")!
-      arrowKeys.setAttribute('style',"display:block") 
+      let arrowKeys: HTMLElement = document.getElementById(
+        "arrowKeysInstructions"
+      )!
+      arrowKeys.setAttribute("style", "display:block")
     })
     return (
       <div id="robotLocation">
@@ -33,13 +36,14 @@ const Board: React.FC<{ robotData: RobotData; oldLocation: string }> = ({
         <p>{robotData.y}</p>
         <p>{robotData.facing}</p>
         <div id="arrowKeysInstructions">Please use your Arrow keys</div>
+        <KeyBoard />
       </div>
-    );
+    )
   } else {
-    return <p>Place Robot on Board</p>;
+    return <p>Place Robot on Board</p>
   }
-};
+}
 
-export default Board;
+export default Board
 
 //need to find a way of having board not run unless data has been verified
