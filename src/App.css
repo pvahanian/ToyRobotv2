@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
   text-align: center;
   font-family: "Roboto Mono", monospace;
   justify-content: center;
@@ -9,8 +10,11 @@
 }
 #description {
   display: flex;
-  align-items: center;
-  width: 97%;
+  flex-direction: row;
+  align-content: flex-start;
+  /* align-content: flex-end; */
+  /* align-items: center; */
+  width: 99%;
   text-align: left;
   line-height: normal;
 }
@@ -39,7 +43,7 @@
 }
 .displays {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 90vw;
 }
 #displaySpacer {
@@ -134,21 +138,24 @@
   color: rgb(20, 20, 20);
 }
 #top {
-  padding-top: 30px;
+  padding: 10px;
+  transform: rotateZ(270deg);
+
   margin-bottom: 3px;
 }
 #left {
   padding: 10px;
+  transform: rotateY(180deg);
 }
 #right {
   padding: 10px;
 }
 #arrowHolder {
   display: flex;
-  align-items: baseline;
-  justify-content: center;
-  padding-right: 10px;
+  align-items: center;
+  padding: 20px;
   max-height: 95px;
+  margin-right: 15px;
 }
 .highlight {
   background-color: yellowgreen;
@@ -174,4 +181,9 @@
 #arrowKeysInstructions {
   color: red;
   display: none;
+}
+
+#title-div {
+  width: 600px;
+  line-height: 20px;
 }

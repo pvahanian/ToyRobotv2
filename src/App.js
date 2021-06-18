@@ -8,28 +8,32 @@ function App() {
   return (
     <div className="App">
       <div id="description">
-        <h1>Toy Robot</h1>
-        <ul>
-          <li>
-            The application is a simulation of a toy robot moving on a square
-            tabletop, of dimensions 5 units x 5 units.
-          </li>
-          <li>
-            The robot is free to roam around the surface of the table, but must
-            be prevented from falling to destruction.
-          </li>
-          <li>
-            Any movement that would result in the robot falling from the table
-            must be prevented, however further valid movement commands must
-            still be allowed.
-          </li>
-        </ul>
-        <h2>How to operate</h2>
-        <ul>
-          <li>
-            USE: Up Arrow to move, LEFT and RIGHT arrows to change direction
-          </li>
-        </ul>
+        <div id="title-div">
+          <h1>Toy Robot</h1>
+          <ul>
+            <li>
+              The application is a simulation of a toy robot moving on a square
+              tabletop, of dimensions 5 units x 5 units.
+            </li>
+            <li>
+              The robot is free to roam around the surface of the table, but
+              must be prevented from falling to destruction.
+            </li>
+            <li>
+              Any movement that would result in the robot falling from the table
+              must be prevented, however further valid movement commands must
+              still be allowed.
+            </li>
+          </ul>
+          <div id="operate-div">
+            <h2>How to operate</h2>
+            <ul>
+              <li>
+                USE: Up Arrow to move, LEFT and RIGHT arrows to change direction
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div id="bottomHalf">
         <div>
